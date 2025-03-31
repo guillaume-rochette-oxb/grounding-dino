@@ -1,6 +1,6 @@
 from typing import Tuple, List
 
-import cv2
+# import cv2
 import numpy as np
 import supervision as sv
 import torch
@@ -12,6 +12,7 @@ from groundingdino.models import build_model
 from groundingdino.util.misc import clean_state_dict
 from groundingdino.util.slconfig import SLConfig
 from groundingdino.util.utils import get_phrases_from_posmap
+
 
 # ----------------------------------------------------------------------------------------------------------------------
 # OLD API

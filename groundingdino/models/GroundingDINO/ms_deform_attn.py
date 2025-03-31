@@ -21,9 +21,8 @@ from typing import Optional
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.autograd import Function
-from torch.autograd.function import once_differentiable
 from torch.nn.init import constant_, xavier_uniform_
+
 
 # helpers
 def _is_power_of_2(n):
