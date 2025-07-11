@@ -224,6 +224,14 @@ class GroundingDINO(nn.Module):
         tokenized = self.tokenizer(captions, padding="longest", return_tensors="pt").to(
             samples.device
         )
+        
+        num_tokens = tokenized["input_ids"].shape[1]
+        if num_tokens > self.max_text_len:
+            raise ValueError(
+                f"num_tokens > {self.max_text_len}, got "
+                f"{num_tokens} tokens, consider shortening the captions."
+            )
+        
         (
             text_self_attention_masks,
             position_ids,
